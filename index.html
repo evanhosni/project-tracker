@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <title>project tracker</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="jumbotron text-center">
+        <h1>hello this is my project tracker 😳</h1>
+        <h2>current time and date:<br><span id="time-display">00:00:00</span></h2>
+    </header>
+
+    <main class="row mx-1">
+        <!-- INSTRUCTIONS -->
+        <section class="col-12 col-md-4 col-lg-3 card">
+            <div class="card-header">
+                <h3>instructions</h3>
+            </div>
+            <div>
+                <div class="card-text">
+                    <p>click button below to add a project</p>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">project name</li>
+                    <li class="list-group-item">project type</li>
+                    <li class="list-group-item">due date</li>
+                    <li class="list-group-item">hourly rate</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button data-toggle="modal" data-target="#project-modal">add project</button>
+            </div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="col-12 col-md-8 col-lg-9">
+            <table class="table table-bordered custom-table">
+                <tr>
+                    <th scope="col">project name</th>
+                    <th scope="col">project type</th>
+                    <th scope="col">hourly rate ($)</th>
+                    <th scope="col">due date</th>
+                    <th scope="col">days until due date</th>
+                    <th scope="col">potential total earnings</th>
+                    <th scope="col"></th>
+                </tr>
+                <tbody id="project-display"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div id="project-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <form id="project-form" class="modal-content">
+            <div >
+                <label for="project-name-input">project name</label>
+                <input type="text" id="project-name-input" placeholder="enter the project's name" required>
+            </div>
+            <div>
+                <label for="project-type-input">project type</label>
+                <select id="project-type-input">
+                    <option selected disabled>pick one...</option>
+                    <option value="feed cat">feed cat</option>
+                    <option value="develop a website">develop a website</option>
+                    <option value="fly a kite">fly a kite</option>
+                    <option value="yard work">yard work</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+            <div>
+                <label for="hourly-rate-input">hourly rate ($)</label>
+                <input type="number" id="hourly-rate-input" placeholder="$" min="0" required>
+            </div>
+            <div>
+                <label for="due-date-input">due date</label>
+                <input type="date" id="due-date-input" placeholder="when is it due?" required>
+            </div>
+            <div>
+                <button data-dismiss="modal">close</button>
+                <button type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
